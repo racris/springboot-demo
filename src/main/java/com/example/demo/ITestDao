@@ -1,0 +1,12 @@
+package com.example.demo.db1;
+
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
+
+@Repository
+public interface ITestDao {
+
+    List<Map<String,String>> getAll();
+}
