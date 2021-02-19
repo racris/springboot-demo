@@ -5,8 +5,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
-    @RequestMapping("/index")
-    public String index(){
-        return "index";
+    @Autowired
+    private ITestDao testDao;
+
+    @Autowired
+    private ITestDao1 testDao1;
+
+    @RequestMapping("/test1")
+    public List<Map<String,String>> test1(){
+        return testDao.getAll();
+    }
+
+    @RequestMapping("/test2")
+    public List<Map<String,String>> test2(){
+        return testDao1.getAll1();
     }
 }
