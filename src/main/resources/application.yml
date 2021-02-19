@@ -1,2 +1,21 @@
 server:
   port: 8090
+spring:
+  datasource:
+    db1: # 数据源1
+      jdbc-url: jdbc:mysql://100.100.18.121:3306/lucky?allowMultiQueries=true&serverTimezone=GMT&characterEncoding=UTF-8
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    db2: # 数据源2
+      jdbc-url: jdbc:mysql://100.100.18.121:3306/model?allowMultiQueries=true&serverTimezone=GMT&characterEncoding=UTF-8
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  durid:
+    initial-size: 1
+    max-active: 20
+    min-idle: 1
+    max-wait: 60000
+mybatis:
+  mapper-locations: classpath:mapper/*/**.xml
